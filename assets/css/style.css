@@ -1,0 +1,218 @@
+/* Academic GitHub Pages starter */
+
+:root {
+  --text: #1f2933;
+  --muted: #5f6b76;
+  --line: #d9dee3;
+  --surface: #f7f8fa;
+  --link: #244b74;
+  --max-width: 820px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+  font-size: 17px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-wrap {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+}
+
+.hero {
+  padding: 78px 0 56px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.contact-line {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+}
+
+.section {
+  padding: 42px 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0 0 14px;
+}
+
+.entry {
+  margin-bottom: 30px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.meta,
+.small-note {
+  color: var(--muted);
+}
+
+.citation {
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid var(--text);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+.button:hover,
+.button:focus {
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.small-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+code {
+  background: var(--surface);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 28px 0 44px;
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 16px;
+  }
+
+  .nav-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 0;
+    gap: 10px;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 52px 0 40px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
