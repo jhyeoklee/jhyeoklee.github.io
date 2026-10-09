@@ -169,9 +169,6 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 5px 12px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
   color: var(--link);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
@@ -192,7 +189,7 @@ p {
 }
 
 .abstract summary:hover {
-  background: var(--surface);
+  text-decoration: underline;
 }
 
 .abstract summary:focus-visible {
