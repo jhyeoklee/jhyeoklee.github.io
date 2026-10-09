@@ -1,56 +1,62 @@
-# Juhyeok Lee — Academic Website
+# Juhyeok Lee | Academic Website
 
-This is a minimal static academic website designed for GitHub Pages.
+Personal academic website for Juhyeok Lee, hosted on GitHub Pages.
 
-## Repository name
+- Website: https://jhyeoklee.github.io/
+- Repository: https://github.com/jhyeoklee/jhyeoklee.github.io
+- Publishing branch: `main`
+- Publishing folder: repository root
 
-For a personal GitHub Pages site, create a repository named:
+## Site content
 
-`YOUR-GITHUB-USERNAME.github.io`
+The navigation and page sections follow this order:
 
-Then copy the contents of this folder into the repository.
+1. About
+2. Publications
+3. Research, with separate Working Papers and Work in Progress groups
+4. Teaching
+5. CV
 
-## Files
+Edit `index.html` for content and `assets/css/style.css` for styling.
+Replace `files/Juhyeok_Lee_CV.pdf` to update the CV download, and update the
+date shown in the CV section. The October 2026 CV is included.
 
-```text
-YOUR-GITHUB-USERNAME.github.io/
-├── index.html
-├── README.md
-├── assets/
-│   └── css/
-│       └── style.css
-└── files/
-    ├── Juhyeok_Lee_CV.pdf
-    └── PUT_CV_HERE.txt
+## Update the website
+
+For a fresh local copy:
+
+```sh
+git clone https://github.com/jhyeoklee/jhyeoklee.github.io.git
+cd jhyeoklee.github.io
 ```
 
-## Publish with GitHub Pages
+Before editing an existing copy, pull the latest changes:
 
-1. Push these files to the `main` branch.
-2. In the repository, open **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select `main` and `/ (root)`.
-5. Save.
+```sh
+git pull --ff-only origin main
+```
 
-Your site will normally appear at:
+After editing and reviewing the website:
 
-`https://YOUR-GITHUB-USERNAME.github.io/`
+```sh
+git add index.html assets/css/style.css files/Juhyeok_Lee_CV.pdf
+git commit -m "Update academic website"
+git push origin main
+```
 
-## Before publishing
+GitHub may ask you to sign in when pushing from a new computer.
+Commits pushed to `main` are published automatically by the existing GitHub
+Pages configuration. Track deployment under the repository's Actions tab.
 
-- Replace `YOUR-GITHUB-USERNAME` where relevant.
-- Put your current CV PDF in `files/Juhyeok_Lee_CV.pdf`.
-- Edit the short biography and research descriptions if desired.
-- Add publication DOI links when available.
-- Add a custom domain later if you want one.
+## Preview locally
 
-## Optional future expansion
+Open `index.html` in a browser, or run the following from the repository folder:
 
-If the site grows, split sections into separate pages such as:
+```sh
+python -m http.server 8000 --bind 127.0.0.1
+```
 
-- `research.html`
-- `teaching.html`
-- `cv.html`
-- `contact.html`
+Then visit http://127.0.0.1:8000/.
 
-For an early-career academic site, the current one-page structure is intentionally simple and low-maintenance.
+This is a static HTML/CSS website. The `.nojekyll` file tells GitHub Pages to
+serve the site without Jekyll processing.

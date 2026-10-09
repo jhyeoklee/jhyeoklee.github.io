@@ -114,6 +114,7 @@ h1 {
 .section {
   padding: 42px 0;
   border-top: 1px solid var(--line);
+  scroll-margin-top: 82px;
 }
 
 h2 {
@@ -122,7 +123,8 @@ h2 {
   letter-spacing: -0.01em;
 }
 
-h3 {
+h3,
+h4 {
   margin: 0 0 6px;
   font-size: 1.05rem;
 }
@@ -139,6 +141,16 @@ p {
   margin-bottom: 0;
 }
 
+.subsection-heading {
+  margin-bottom: 20px;
+  font-size: 1.15rem;
+}
+
+.research-group + .research-group,
+.teaching-group + .teaching-group {
+  margin-top: 34px;
+}
+
 .meta,
 .small-note {
   color: var(--muted);
@@ -149,10 +161,79 @@ p {
   text-indent: -1.4em;
 }
 
-.two-col {
+.abstract {
+  margin-top: 14px;
+}
+
+.abstract summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--link);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.abstract summary::after {
+  content: "+";
+}
+
+.abstract[open] summary::after {
+  content: "−";
+}
+
+.abstract summary:hover {
+  background: var(--surface);
+}
+
+.abstract summary:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.abstract-body {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--line);
+  background: var(--surface);
+}
+
+.abstract-body p {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.course-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.course-list li {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px 40px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 4px 24px;
+  padding: 12px 0;
+}
+
+.course-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.course-term {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 0.95rem;
 }
 
 .button {
@@ -211,8 +292,11 @@ code {
     padding: 52px 0 40px;
   }
 
-  .two-col {
+  .section {
+    scroll-margin-top: 148px;
+  }
+
+  .course-list li {
     grid-template-columns: 1fr;
-    gap: 18px;
   }
 }
