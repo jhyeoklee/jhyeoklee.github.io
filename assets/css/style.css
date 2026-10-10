@@ -161,11 +161,22 @@ p {
   text-indent: -1.4em;
 }
 
+.publication-actions,
 .abstract {
   margin-top: 14px;
 }
 
-.abstract summary {
+.publication-actions > .abstract {
+  display: inline;
+  margin-top: 0;
+}
+
+.doi-link {
+  margin-right: 20px;
+}
+
+.abstract summary,
+.doi-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -188,11 +199,13 @@ p {
   content: "−";
 }
 
-.abstract summary:hover {
+.abstract summary:hover,
+.doi-link:hover {
   text-decoration: underline;
 }
 
-.abstract summary:focus-visible {
+.abstract summary:focus-visible,
+.doi-link:focus-visible {
   outline: 2px solid var(--link);
   outline-offset: 3px;
 }
